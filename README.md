@@ -16,7 +16,7 @@
 
 ## profileテーブル
 
-| Column     | Type       | Options                        |
+| Column     | Type       | Options           |
 | ---------- | ---------- | ----------------- |
 | message    | text       | null: false       |
 | age        | integer    | null: false       |
