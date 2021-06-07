@@ -36,12 +36,18 @@ a {
 
 /* ヘッダー */
 
-.header {
-  background-color: #f1f8fe;
+.sales_header {
+  background-color: red;
   margin-bottom: 48px;
   padding: 20px 0;
-
 }
+
+.customer_header {
+  background-color: yellow;
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+
 .inner {
   width: 1024px;
   margin: 0 auto;
@@ -268,15 +274,30 @@ a {
 }
 /* フッター */
 
-.footer {
-  background-color: #999;
+.sales_footer {
+  background-color:red;
   padding: 10px 0;
 }
-.copyright {
+
+.sales_footer_letter {
   text-align: center;
   color: #fff;
-  font-size: 10px;
+  font-size: 20px;
 }
+
+.customer_footer {
+  background-color: blue;
+  padding: 10px 0;
+}
+
+.customer_footer_letter {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {

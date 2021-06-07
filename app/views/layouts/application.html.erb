@@ -11,12 +11,24 @@
   </head>
 
   <body>
-    <header class="header">
+
+   
+  <% if user_signed_in? && current_user.id <= 3 %>
+      <header class="sales_header">
+    <% elsif user_signed_in? && current_user.id >= 4%>
+      <header class="customer_header">
+    <% else %>
+      <header class="customer_header">
+  <% end %>
+
+
+
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
+
           <%if user_signed_in? %>
             <div class="nav__right"> 
               <%= link_to "ログアウト",  destroy_user_session_path,  method: :delete,class: :nav__logout %>
@@ -32,8 +44,17 @@
       </div>
     </header>
     <%= yield %>
-    <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+  
+<%# 社員と顧客をidによって分岐させる %>
+  <% if user_signed_in? && current_user.id <= 3 %>
+    <footer class="sales_footer">
+    <p class="sales_footer_letter">社員用のページです。</p>
+    <% elsif user_signed_in? && current_user.id >= 4%>
+     <footer class="customer_footer">
+    <p class="customer_account">いつもお世話になっております。</p>
+    <% else %>
+  <% end %>
+
     </footer>
   </body>
 </html>
