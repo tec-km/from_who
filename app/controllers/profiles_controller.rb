@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  before_action :authenticate_user!,only:[:new,:edit,:destroy]
   before_action :move_to_index, except: [:index,:show,:new,:create]
 
 
@@ -25,6 +25,23 @@ class ProfilesController < ApplicationController
 def show
   @profile= Profile.find(params[:id])
 end 
+
+def edit
+  @profile= Profile.find(params[:id])
+end
+
+def update
+  @profile = Profile.find(params[:id])
+  if @profile.update(profile_params)
+    redirect_to root_path
+  else
+    render :edit
+  end
+end
+
+
+
+
 
 private
 
