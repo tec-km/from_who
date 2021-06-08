@@ -39,7 +39,11 @@ def update
   end
 end
 
-
+def destroy
+  @profiles = Profile.find(params[:id])
+  @profiles.destroy
+  redirect_to root_path
+end
 
 
 
