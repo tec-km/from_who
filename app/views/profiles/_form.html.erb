@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.id <= 3 %>
+<% if user_signed_in? && current_user.id <= 10 %>
     <%= form_with model: profile, local: true do |f|%>
       <div class="field">
         <%= f.label :image, "セールスの画像" %><br />
@@ -16,7 +16,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :career, "経歴" %><br />
+        <%= f.label :career, "経歴やコメント" %><br />
         <%= f.text_area :career, class: :form__text, id:"profile_career" %>
       </div>
 
@@ -26,7 +26,7 @@
 
     <% end %>
 
-  <%# elsif user_signed_in? && current_user.id >= 4%>
+  <%# elsif user_signed_in? && current_user.id >= 11%>
   <%#顧客のプロフィールを実装する時に記述%>
   <%#else %>
  

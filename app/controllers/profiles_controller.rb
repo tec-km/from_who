@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 
 
   def index
-    @profiles= Profile.all
+    @profile= Profile.all
   end
 
   def new
@@ -40,8 +40,8 @@ def update
 end
 
 def destroy
-  @profiles = Profile.find(params[:id])
-  @profiles.destroy
+  @profile = Profile.find(params[:id])
+  @profile.destroy
   redirect_to root_path
 end
 

@@ -222,6 +222,8 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
   margin: 0 4px;
+  margin-left: 600px;
+  margin-right: 100px;
 }
 .profile__btn:hover{
   color: #fff;
@@ -349,4 +351,15 @@ a {
   .table{
     width: 100%;
   }
+}
+
+
+.head{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.head-right{
+  border: solid black;
 }

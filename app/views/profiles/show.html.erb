@@ -1,33 +1,50 @@
 <main class="main">
   <div class="inner">
     <div class="profile__wrapper">
-      <p class="profile__hedding">
-        <%= @profile.user.name %>
-      </p>
-      <%= link_to @profile.user.name, user_path(@profile.user.id), class: :profile__user %>
+      
+
+    
        <% if user_signed_in? && current_user.id == @profile.user_id %>
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_profile_path(@profile.id), class: :profile__btn %>
-          <%= link_to "削除する", profile_path(@profile.id), method: :delete ,class: :profile__btn %>
+          <%= link_to "全てを編集する", edit_profile_path(@profile.id), class: :profile__btn %>
+          <%= link_to "全てを削除する", profile_path(@profile.id), method: :delete ,class: :profile__btn %>
         </div>
       <% end %>
-      <div class="profile__image">
-        <%= image_tag @profile.image %>
-      </div>
-      <div class="profile__body">
-        <div class="profile__detail">
-          <p class="detail__title">キャッチコピー</p>
-          <p class="detail__message">
-            <%= @profile.age %>
+
+     <%#名前と画像を左側に。その他を右側に配置する。%>
+     <div class="head">
+      <div class="head-left"> 
+        <p class="profile__hedding">
+            <%= @profile.user.name %>
           </p>
-        </div>
-        <div class="profile__detail">
-          <p class="detail__title">コンセプト</p>
-          <p class="detail__message">
-            <%= @profile.age %>
-          </p>
-        </div>
+          <div class="profile__image">
+            <%= image_tag @profile.image %>
+          </div>
       </div>
+
+      <div class="head-right">
+              <div class="profile__detail">
+              <p class="detail__title">年齢</p>
+                <p class="detail__message">
+                  <%= @profile.age %>歳
+                </p>
+              </div>
+              <div class="profile__detail">
+                <p class="detail__title">今までの経歴</p>
+                <p class="detail__message">
+                  <%= @profile.career %>
+                </p>
+              </div>
+            <div class="profile__body">
+              <div class="profile__detail">
+                <p class="detail__title">お客様へのメッセージ</p>
+                <p class="detail__message">
+                  <%= @profile.message %>
+                </p>
+              </div>
+            </div>
+      </div>
+    </div>
       <%#<div class="profile__comments">
         <% if user_signed_in? %>
           <%# <%= form_with model:[@profile],local: true do |f|%>
@@ -44,7 +61,7 @@
           <div class="comments">
             <%# @comments.each do |comment| %>
          <%#      <li class="comments_list">
-         <%#      <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+         <%#      <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %><%#/strong>
          <%#     <%= comment.text %>
           <%#     </li>
          <%#    <% end %>

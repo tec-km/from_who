@@ -13,14 +13,14 @@
   <body>
 
    <%# 社員と顧客をidによって分岐させる %>
-  <% if user_signed_in? && current_user.id <= 3 %>
+  <% if user_signed_in? && current_user.id <= 10 %>
       <header class="sales_header">
-    <% elsif user_signed_in? && current_user.id >= 4%>
+    <% elsif user_signed_in? && current_user.id >= 11%>
       <header class="customer_header">
     <% else %>
       <header class="customer_header">
   <% end %>
-
+<%# 社員と顧客をidによって分岐させる %>
 
 
       <div class="inner">
@@ -29,11 +29,21 @@
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
 
+
           <%if user_signed_in? %>
-            <div class="nav__right"> 
-              <%= link_to "ログアウト",  destroy_user_session_path,  method: :delete,class: :nav__logout %>
-              <%= link_to "プロフィールの編集", new_profile_path, class: :nav__btn %>
-            </div> 
+              <div class="nav__right"> 
+                <%= link_to "ログアウト",  destroy_user_session_path,  method: :delete,class: :nav__logout %>
+           <%# ↓すでに投稿している社員だったら %>  
+              <% if  current_user.profile.present? && current_user.id <= 10%>
+              <%= link_to "自分のプロフィールを見る", profile_path(current_user.id), class: :nav__btn %>
+           <%# ↓投稿していない社員だったら %> 
+                <% elsif user_signed_in? && current_user.id <= 10 %>
+              <%= link_to "プロフィールの投稿", new_profile_path, class: :nav__btn %>
+                <% else %>
+           <%# 顧客の場合の実装時記述 %>
+              <% end %>
+           
+              </div> 
           <% else %>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
@@ -46,14 +56,16 @@
     <%= yield %>
   
 <%# 社員と顧客をidによって分岐させる %>
-  <% if user_signed_in? && current_user.id <= 3 %>
+  <% if user_signed_in? && current_user.id <= 10 %>
     <footer class="sales_footer">
     <p class="sales_footer_letter">社員用のページです。</p>
-    <% elsif user_signed_in? && current_user.id >= 4%>
+    <% elsif user_signed_in? && current_user.id >= 11%>
      <footer class="customer_footer">
     <p class="customer_footer_letter">いつもお世話になっております。</p>
     <% else %>
   <% end %>
+<%# 社員と顧客をidによって分岐させる %>
+
 
     </footer>
   </body>
