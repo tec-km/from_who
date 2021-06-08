@@ -14,14 +14,17 @@ class ProfilesController < ApplicationController
  #root_pathは後に変更？
   def create
     @profile = Profile.new(profile_params)
-  if @profile.save
+    if @profile.save
     redirect_to root_path
-  else
+    else
     render :new
-   end
- end
+    end
+   
+  end
 
-
+def show
+  @profile= Profile.find(params[:id])
+end 
 
 private
 
@@ -35,10 +38,6 @@ private
      redirect_to action: :index
    end
  end
-
-
-
-
 
 end
 

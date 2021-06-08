@@ -1,4 +1,7 @@
 <div class="card">
+   <p class="card__summary">
+    <%= profile.user.name %>
+    </p>
   <%= link_to image_tag(profile.image, class: :card__img ), profile_path(profile.id)%>
   <div class="card__body">
     <%= link_to profile.message, profile_path(profile.id),method: :get, class: :card__title%>

@@ -5,7 +5,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :message ,  null: false
       t.text :age,       null: false
       t.string :career,  null: false
-      t.references :user
+      t.references :user,foreign_key: true
 
       t.timestamps
     end

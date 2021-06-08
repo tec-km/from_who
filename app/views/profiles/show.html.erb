@@ -1,35 +1,55 @@
-<div class="main">
+<main class="main">
   <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "ユーザー名さんの情報"%>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= "ユーザー名" %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">プロフィール</th>
-            <td class="table__col2"><%= "ユーザーのプロフィール" %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">所属</th>
-            <td class="table__col2"><%= "ユーザーの所属" %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">役職</th>
-            <td class="table__col2"><%= "ユーザーの役職" %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "ユーザー名さんのプロトタイプ"%>
-      </h2>
-      <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+    <div class="profile__wrapper">
+      <p class="profile__hedding">
+        <%= @profile.user.name %>
+      </p>
+      <%= link_to @profile.user.name, user_path(@profile.user.id), class: :profile__user %>
+       <% if user_signed_in? && current_user.id == @profile.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", edit_profile_path(@profile.id), class: :profile__btn %>
+          <%= link_to "削除する", profile_path(@profile.id), method: :delete ,class: :profile__btn %>
+        </div>
+      <% end %>
+      <div class="profile__image">
+        <%= image_tag @profile.image %>
       </div>
+      <div class="profile__body">
+        <div class="profile__detail">
+          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__message">
+            <%= @profile.age %>
+          </p>
+        </div>
+        <div class="profile__detail">
+          <p class="detail__title">コンセプト</p>
+          <p class="detail__message">
+            <%= @profile.age %>
+          </p>
+        </div>
+      </div>
+      <%#<div class="profile__comments">
+        <% if user_signed_in? %>
+          <%# <%= form_with model:[@profile],local: true do |f|%>
+           <%#  <div class="field">
+            <%#   <%= f.label :text, "コメント" %><br />
+            <%#   <%= f.text_field :text, id:"comment_text" %>
+           <%#  </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+          <%#   </div>
+          <% end %> 
+        <%#<% end %>
+       <%#  <ul class="comments_lists">
+          <div class="comments">
+            <%# @comments.each do |comment| %>
+         <%#      <li class="comments_list">
+         <%#      <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+         <%#     <%= comment.text %>
+          <%#     </li>
+         <%#    <% end %>
+         <%#</ul>   
+      </div>%>
     </div>
   </div>
-</div>
+</main>
