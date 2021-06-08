@@ -12,7 +12,7 @@
 
   <body>
 
-   
+   <%# 社員と顧客をidによって分岐させる %>
   <% if user_signed_in? && current_user.id <= 3 %>
       <header class="sales_header">
     <% elsif user_signed_in? && current_user.id >= 4%>
@@ -32,7 +32,7 @@
           <%if user_signed_in? %>
             <div class="nav__right"> 
               <%= link_to "ログアウト",  destroy_user_session_path,  method: :delete,class: :nav__logout %>
-              <%= link_to "New Proto", new_profile_path, class: :nav__btn %>
+              <%= link_to "プロフィールの編集", new_profile_path, class: :nav__btn %>
             </div> 
           <% else %>
             <div class="nav__right">

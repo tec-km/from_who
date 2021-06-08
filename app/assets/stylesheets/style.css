@@ -97,6 +97,14 @@ a {
   width: 50%;
 }
 
+.form__message {
+  width: 50%;
+  height: 300px;;
+}
+
+.form__age {
+  width: 5%;
+}
 .field{
   margin: 10px 0;
 }
