@@ -2,8 +2,6 @@
   <div class="inner">
     <div class="profile__wrapper">
       
-
-    
        <% if user_signed_in? && current_user.id == @profile.user_id %>
         <div class="prototype__manage">
           <%= link_to "全てを編集する", edit_profile_path(@profile.id), class: :profile__btn %>
