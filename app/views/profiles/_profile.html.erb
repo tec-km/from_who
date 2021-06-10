@@ -1,19 +1,28 @@
-<div class="card">
-   <p class="card__summary">
-    <%= profile.user.name %>
-    </p>
-  <%= link_to image_tag(profile.image, class: :card__img ), profile_path(profile.id)%>
-  <div class="card__body">
-    <%= link_to profile.message, profile_path(profile.id),method: :get, class: :card__title%>
-    <p class="card__summary">
-    <%= profile.age %>
-    </p>
-     <p class="card__summary">
-    <%= profile.career %>
-    </p>
-    <%#= link_to profile.user.name, user_path(profile.user.id), class: :card__user %>
-  </div>
-</div>
+<% if user_signed_in?%>
 
+    <div class="card">
+        <p class="card__summary">
+        <%= profile.user.name %>
+        </p>
+        <%= link_to image_tag(profile.image, class: :card__img ), profile_path(profile.id)%>
+        <div class="card__body">
+        <%#= link_to profile.message, profile_path(profile.id),method: :get, class: :card__title%>
+        <p class="card__summary">
+        <%= profile.age %>歳
+        </p>
+        <p class="card__summary">
+        <%= profile.career %>
+        </p>
+        <%#= link_to profile.user.name, user_path(profile.user.id), class: :card__user %>
+      </div>
+    </div>
+
+<% else %>
+
+<body class="topimage">
+</body>
+
+
+<% end %>
 
 

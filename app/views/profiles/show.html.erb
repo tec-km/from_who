@@ -3,9 +3,9 @@
     <div class="profile__wrapper">
       
        <% if user_signed_in? && current_user.id == @profile.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "全てを編集する", edit_profile_path(@profile.id), class: :profile__btn %>
-          <%= link_to "全てを削除する", profile_path(@profile.id), method: :delete ,class: :profile__btn %>
+        <div class="profile__manage">
+          <%= link_to "編集する", edit_profile_path(@profile.id), class: :profile__btn %>
+          <%= link_to "削除する", profile_path(@profile.id), method: :delete ,class: :profile__btn %>
         </div>
       <% end %>
 
@@ -18,6 +18,18 @@
           <div class="profile__image">
             <%= image_tag @profile.image %>
           </div>
+           <% if current_user.id != @profile.user_id && current_user.id >= 11%>
+           <div class="renraku-button">
+            この社員に連絡をしてみる。
+           </div>
+           <% elsif current_user.id == @profile.user_id %> 
+            <div class="renraku-button">
+            お客様からの問い合わせ一覧
+           </div>
+           <% else %>
+
+           <% end %>
+
       </div>
 
       <div class="head-right">
@@ -28,7 +40,7 @@
                 </p>
               </div>
               <div class="profile__detail">
-                <p class="detail__title">今までの経歴</p>
+                <p class="detail__title">経歴</p>
                 <p class="detail__message">
                   <%= @profile.career %>
                 </p>

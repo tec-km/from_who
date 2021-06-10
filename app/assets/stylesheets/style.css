@@ -357,9 +357,30 @@ a {
 .head{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.head-left{
+  border: solid yellow;
+  width: 500px;
+ height: 500px
 }
 
 .head-right{
   border: solid black;
+  width: 500px;
+ height: 500px;
+}
+
+/* 追記 */
+.topimage{
+  background-image: url(top.png);
+  background-size:  100%;
+}
+
+.renraku-button{
+  border: solid red;
+  background-color: yellow;
+  margin: 1px 135px 1px 135px;
+  color: blue;
 }
