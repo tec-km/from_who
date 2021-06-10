@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 
 
   def index
-    @profile= Profile.all
+    @profile= Profile.order("updated_at DESC")
   end
 
   def new
