@@ -1,9 +1,24 @@
 <main class="main">
   <div class="inner">
  
+
+<% if user_signed_in?%>
     <div class="card__wrapper">
       <%= render partial: "profile", collection: @profile %>    
     </div>
+
+<% else %>
+   <div class="topimage">
+      <%= render partial: "profile", collection: @profile %>    
+    </div>
+<% end %>
+
+
+
+
+
+
+
   </div>
 </main>
 
