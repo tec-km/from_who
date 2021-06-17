@@ -375,11 +375,12 @@ a {
 
 /* 追記 */
 .topimage{
- display: flex;
+display: flex;
 flex-wrap: wrap;
 background-image: url('top.png');
 background-size:  100%;
-min-height: calc(100vh - 161px);
+background-repeat: no-repeat;
+min-height: calc(70vh - 161px);
 }
 
 
