@@ -34,7 +34,7 @@
               <div class="nav__right"> 
                 <%= link_to "ログアウト",  destroy_user_session_path,  method: :delete,class: :nav__logout %>
            <%# ↓すでに投稿している社員だったら %>  
-              <% if  current_user.profile.present? && current_user.id <= 10%>
+              <% if  current_user.profile.present? && current_user.id <= 10 %>
               <%= link_to "自分のプロフィールを見る", profile_path(current_user.profile.id), class: :nav__btn %>
            <%# ↓投稿していない社員だったら %> 
                 <% elsif user_signed_in? && current_user.id <= 10 %>
