@@ -378,7 +378,7 @@ a {
 display: flex;
 flex-wrap: wrap;
 background-image: url('top.png');
-background-size:  100%;
+background-size:  contain;
 background-repeat: no-repeat;
 min-height: calc(70vh - 161px);
 }
