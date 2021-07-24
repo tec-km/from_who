@@ -19,6 +19,15 @@ https://from-who.herokuapp.com/
 営業担当 アカウント  1@a  パスワード a111111
 顧客    アカウント  11@a パスワード a111111
 ## DEMO
+トップページ（ログイン前）
+https://gyazo.com/3e0feaaa7dc88ae486fa523b4bb7a97a
+ログイン画面
+https://gyazo.com/94a2df2c1fe20cb901ebc2f3db785667
+社員用一覧ページ
+https://gyazo.com/d77267343b7f4c8cdb6d9d587860968e
+社員自己プロフィール編集画面
+https://gyazo.com/d89eeec584cb26e9198afa1da7802e34
+
 
 ## 利用方法
 上記URLにアクセスしてユーザー登録をしていただく。
@@ -108,3 +117,8 @@ https://gyazo.com/9c64dbe633d50997c193d47b6e71f566
 ## Association
 
 - belongs_to :user
+
+
+
+
+
