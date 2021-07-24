@@ -21,14 +21,19 @@ https://from-who.herokuapp.com/
 ## DEMO
 トップページ（ログイン前）
 https://gyazo.com/3e0feaaa7dc88ae486fa523b4bb7a97a
+
 ログイン画面
 https://gyazo.com/94a2df2c1fe20cb901ebc2f3db785667
+
 社員用一覧ページ
 https://gyazo.com/d77267343b7f4c8cdb6d9d587860968e
+
 社員自己プロフィール編集画面
 https://gyazo.com/d89eeec584cb26e9198afa1da7802e34
+
 顧客用一覧画面
 https://gyazo.com/f51ae1a7474afcf8fa0657d105167ccc
+
 顧客用社員プロフィール画面
 https://gyazo.com/cd5fb8a87012a01e2b8849b975e4a299
 
